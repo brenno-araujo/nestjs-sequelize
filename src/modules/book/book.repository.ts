@@ -9,7 +9,7 @@ export class BookRepository {
     private book: typeof Book,
   ) {}
 
-  async create(data: CreateBookDto) {
+  async create(data: CreateBookDto): Promise<Book> {
     try {
       return await this.book.create(data);
     } catch (error) {
