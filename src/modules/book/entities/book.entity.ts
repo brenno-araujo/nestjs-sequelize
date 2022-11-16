@@ -1,4 +1,12 @@
-import { Table, Column, Model, BelongsTo, ForeignKey, CreatedAt, UpdatedAt } from 'sequelize-typescript';
+import {
+  Table,
+  Column,
+  Model,
+  BelongsTo,
+  ForeignKey,
+  CreatedAt,
+  UpdatedAt,
+} from 'sequelize-typescript';
 import { Author } from 'src/modules/author/entities/author.entity';
 
 @Table
@@ -24,5 +32,4 @@ export class Book extends Model {
 
   @BelongsTo(() => Author)
   author: Author;
-
 }

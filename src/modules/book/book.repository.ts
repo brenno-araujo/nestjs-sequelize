@@ -19,11 +19,10 @@ export class BookRepository {
   }
 
   async findOne(barcode: string): Promise<Book> {
-    console.log('barcode', barcode);
     try {
       return await this.book.findOne({
         where: { barcode },
-        include: [Author]
+        include: [Author],
       });
     } catch (error) {
       throw new Error('Erro ao buscar livro');
@@ -33,7 +32,7 @@ export class BookRepository {
   async findById(id: number): Promise<Book> {
     try {
       return await this.book.findByPk(id, {
-        include: [Author]
+        include: [Author],
       });
     } catch (error) {
       throw new Error('Erro ao buscar livro');
@@ -43,7 +42,7 @@ export class BookRepository {
   async findAll(): Promise<Book[]> {
     try {
       return await this.book.findAll({
-        include: [Author]
+        include: [Author],
       });
     } catch (error) {
       throw new Error('Erro ao buscar livros');
@@ -68,5 +67,4 @@ export class BookRepository {
       throw new Error('Erro ao excluir livro');
     }
   }
-
 }

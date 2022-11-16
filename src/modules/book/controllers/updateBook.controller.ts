@@ -10,7 +10,11 @@ export class UpdateBookController {
   constructor(private readonly updateBookService: UpdateBookService) {}
 
   @Put(':id')
-  async update(@Param('id') id: number, @Res() response: Response, @Body() data: UpdateBookRequest) {
+  async update(
+    @Param('id') id: number,
+    @Res() response: Response,
+    @Body() data: UpdateBookRequest,
+  ) {
     try {
       let request = new UpdateBookRequest();
       request = data;

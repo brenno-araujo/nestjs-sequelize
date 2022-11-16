@@ -8,9 +8,7 @@ export class FindAllBookService {
   async execute() {
     const books = await this.repository.findAll();
     if (!books) {
-      throw new Error(
-        'Livros não encontrados',
-      );
+      throw new Error('Livros não encontrados');
     }
     return books;
   }

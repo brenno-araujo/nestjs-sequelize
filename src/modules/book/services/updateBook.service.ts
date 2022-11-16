@@ -7,7 +7,6 @@ export class UpdateBookService {
   constructor(private readonly repository: BookRepository) {}
 
   async execute(id: number, data: CreateBookDto) {
-
     const bookExists = await this.repository.findById(id);
     if (!bookExists) {
       throw new Error('Livro não encontrado');
@@ -25,5 +24,5 @@ export class UpdateBookService {
       throw new Error('Erro ao atualizar livro');
     }
     return book;
-}
+  }
 }

@@ -11,16 +11,16 @@ export interface BookResourceInterface {
 }
 
 export class BookResource {
-public async resource(book: Book): Promise<BookResourceInterface> {
-      return {
-        id: book.id,
-        title: book.title,
-        author_id: book.author_id,
-        barcode: book.barcode,
-        author: {
-          id: book.author.id,
-          name: book.author.name,
-        },
-      };
+  public async resource(book: Book): Promise<BookResourceInterface> {
+    return {
+      id: book.id,
+      title: book.title,
+      author_id: book.author_id,
+      barcode: book.barcode,
+      author: {
+        id: book.author.id,
+        name: book.author.name,
+      },
+    };
   }
 }

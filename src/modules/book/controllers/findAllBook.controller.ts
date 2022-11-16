@@ -6,7 +6,7 @@ import { ApiTags } from '@nestjs/swagger';
 export class FindAllBookController {
   constructor(private readonly service: FindAllBookService) {}
   @Get()
-  async findAll() { 
+  async findAll() {
     try {
       return await this.service.execute();
     } catch (error) {

@@ -15,21 +15,21 @@ import { DeleteBookService } from './services/deleteBook.service';
 @Module({
   imports: [DatabaseModule],
   controllers: [
-    CreateBookController, 
+    CreateBookController,
     UpdateBookController,
     FindBookController,
     FindAllBookController,
-    DeleteBookController
+    DeleteBookController,
   ],
   providers: [
-    CreateBookService, 
+    CreateBookService,
     UpdateBookService,
     FindBookService,
     FindAllBookService,
     DeleteBookService,
 
-    BookRepository, 
-    ...bookProviders
+    BookRepository,
+    ...bookProviders,
   ],
 })
 export class BookModule {}

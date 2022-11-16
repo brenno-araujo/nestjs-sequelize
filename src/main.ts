@@ -5,13 +5,11 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.useGlobalPipes(
-    new ValidationPipe()
-  );
+  app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
     .setTitle('APIs')
-    .setDescription('APIs do projeto') 
+    .setDescription('APIs do projeto')
     .setVersion('1.0')
     .addTag('authors', 'books')
     .build();
@@ -19,6 +17,5 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   await app.listen(3000);
-  
 }
 bootstrap();

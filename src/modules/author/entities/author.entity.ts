@@ -1,4 +1,11 @@
-import { Table, Column, Model, HasMany, UpdatedAt, CreatedAt } from 'sequelize-typescript';
+import {
+  Table,
+  Column,
+  Model,
+  HasMany,
+  UpdatedAt,
+  CreatedAt,
+} from 'sequelize-typescript';
 import { Book } from 'src/modules/book/entities/BOOK.entity';
 
 @Table
