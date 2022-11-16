@@ -10,13 +10,13 @@ export class CreateBookService {
     const bookExists = await this.repository.findOne(data.barcode);
     if (bookExists) {
       throw new Error(
-        'Código de barras já cadastrado para o livro ',
+        `Código de barras já cadastrado para o livro '${bookExists.title}'`,
       );
     }
 
     const book = await this.repository.create(data);
     if (!book) {
-      throw new Error('Erro ao criar livro');
+      throw new Error('Erro ao cadastrar livro');
     }
     return book;
   }

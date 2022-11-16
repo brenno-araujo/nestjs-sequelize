@@ -1,5 +1,4 @@
 import { Controller, Post, Body, UsePipes, ValidationPipe, Res } from '@nestjs/common';
-import { CreateBookDto } from '../dto/create-book.dto';
 import { CreateBookService } from '../services/createBook.service';
 import { CreateBookRequest } from '../requests/createBook.request';
 import { validate } from 'class-validator';
