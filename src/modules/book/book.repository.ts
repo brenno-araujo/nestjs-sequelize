@@ -40,6 +40,16 @@ export class BookRepository {
     }
   }
 
+  async findAll(): Promise<Book[]> {
+    try {
+      return await this.book.findAll({
+        include: [Author]
+      });
+    } catch (error) {
+      throw new Error('Erro ao buscar livros');
+    }
+  }
+
   async update(data: UpdateBookDto, id: number): Promise<Book> {
     try {
       const book = await this.findById(id);

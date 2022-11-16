@@ -8,17 +8,22 @@ import { FindBookController } from './controllers/findBook.controller';
 import { FindBookService } from './services/findBook.service';
 import { UpdateBookController } from './controllers/updateBook.controller';
 import { UpdateBookService } from './services/updateBook.service';
+import { FindAllBookController } from './controllers/findAllBook.controller';
+import { FindAllBookService } from './services/findAllBook.service';
 @Module({
   imports: [DatabaseModule],
   controllers: [
     CreateBookController, 
     UpdateBookController,
-    FindBookController
+    FindBookController,
+    FindAllBookController
   ],
   providers: [
     CreateBookService, 
     UpdateBookService,
     FindBookService,
+    FindAllBookService,
+    
     BookRepository, 
     ...bookProviders
   ],

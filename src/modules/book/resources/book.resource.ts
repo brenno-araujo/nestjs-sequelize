@@ -1,5 +1,4 @@
 import { Book } from '../entities/book.entity';
-
 export interface BookResourceInterface {
   id: number;
   title: string;

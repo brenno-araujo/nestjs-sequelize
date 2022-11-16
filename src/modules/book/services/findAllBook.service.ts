@@ -2,16 +2,16 @@ import { Injectable } from '@nestjs/common';
 import { BookRepository } from '../book.repository';
 
 @Injectable()
-export class FindBookService {
+export class FindAllBookService {
   constructor(private readonly repository: BookRepository) {}
 
-  async execute(barcode: string) {
-    const book = await this.repository.findOne(barcode);
-    if (!book) {
+  async execute() {
+    const books = await this.repository.findAll();
+    if (!books) {
       throw new Error(
-        'Livro não encontrado',
+        'Livros não encontrados',
       );
     }
-    return book;
+    return books;
   }
 }
