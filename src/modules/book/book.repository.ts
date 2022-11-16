@@ -58,4 +58,15 @@ export class BookRepository {
       throw new Error('Erro ao atualizar livro');
     }
   }
+
+  async delete(id: number): Promise<Book> {
+    try {
+      const book = await this.findById(id);
+      await book.destroy();
+      return book;
+    } catch (error) {
+      throw new Error('Erro ao excluir livro');
+    }
+  }
+
 }
