@@ -2,12 +2,13 @@ import { Controller, Get } from '@nestjs/common';
 import { FindBookService } from '../services/findBook.service';
 import { Param } from '@nestjs/common';
 import { BookResource, BookResourceInterface } from '../resources/book.resource';
-
-@Controller('book/:barcode')
+import { ApiTags } from '@nestjs/swagger';
+@ApiTags('books')
+@Controller('book')
 export class FindBookController {
   constructor(private readonly findBookService: FindBookService) {}
 
-  @Get()
+  @Get(':barcode')
   async find(@Param('barcode') barcode: string) : Promise<BookResourceInterface | {message: string}>   {
     try {
       return new BookResource().resource(await this.findBookService.execute(barcode));
