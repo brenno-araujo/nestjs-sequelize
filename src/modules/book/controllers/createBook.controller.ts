@@ -1,9 +1,10 @@
-import { Controller, Post, Body, UsePipes, ValidationPipe, Res } from '@nestjs/common';
+import { Controller, Post, Body, Res } from '@nestjs/common';
 import { CreateBookService } from '../services/createBook.service';
 import { CreateBookRequest } from '../requests/createBook.request';
 import { validate } from 'class-validator';
 import { Response } from 'express';
-
+import { ApiTags } from '@nestjs/swagger';
+@ApiTags('books')
 @Controller('book')
 export class CreateBookController {
   constructor(private readonly createBookService: CreateBookService) {}

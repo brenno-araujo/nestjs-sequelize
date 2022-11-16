@@ -17,3 +17,8 @@ npx sequelize-cli db:migrate
 ```
 yarn start:dev or npm run start:dev
 ```
+
+##### Rota do swagger
+```
+http://localhost:3000/api
+```
